@@ -13,7 +13,7 @@ PADDLE_WIDTH = 100
 PADDLE_HEIGHT = 20
 
 class Ball:
-    def _init_(self):
+    def __init__(self):
         self.reset()
 
     def reset(self):
@@ -33,7 +33,7 @@ class Ball:
             self.speed_y = -self.speed_y
 
 class Paddle:
-    def _init_(self):
+    def __init__(self):
         self.width = PADDLE_WIDTH
         self.height = PADDLE_HEIGHT
         self.x = (WIDTH - self.width) // 2
@@ -46,7 +46,7 @@ class Paddle:
             self.x += 10
 
 class Game:
-    def _init_(self):
+    def __init__(self):
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption("Ping Pong")
@@ -115,6 +115,6 @@ class Game:
 
         pygame.quit()
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     game = Game()
     game.run()
